@@ -4,9 +4,11 @@ metadata:
   name: ejpk-external-load-balancer
 spec:
   ports:
-    -
-      port: 443
+    - protocol: TCP
+      nodePort: 443
+      port: 80
       targetPort: 80
+
   selector:
     app: ejpk-licence-signatures
     tier: frontend
