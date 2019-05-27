@@ -8,6 +8,6 @@ spec:
       port: 443
       targetPort: 80
   selector:
-    app: eJPK-LS
+    app: ejpk-ls
     tier: frontend
   type: LoadBalancer
