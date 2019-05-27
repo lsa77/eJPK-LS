@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ejpk-request-router
+spec:
+  selector:
+    matchLabels:
+      app: ejpk-licence-signatures
+      name: ejpk-router
+  replicas: 2
+  template:
+    metadata:
+      labels:
+        app: ejpk-licence-signatures
+        tier: frontend
+        name: ejpk-router
+    spec:
+      containers:
+        - name: router
+          image: lsa77/ejpk-router
+          ports:
+            - containerPort: 80:8000
