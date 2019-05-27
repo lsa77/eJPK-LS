@@ -1,13 +1,13 @@
 kind: Service
 apiVersion: v1
 metadata:
-  name: eJPK-LS
+  name: ejpk-external-load-balancer
 spec:
   ports:
     -
       port: 443
       targetPort: 80
   selector:
-    app: ejpk-ls
+    app: ejpk-licence-signatures
     tier: frontend
   type: LoadBalancer
