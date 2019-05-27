@@ -4,6 +4,7 @@ metadata:
   name: ejpk-external-load-balancer
 spec:
   ports:
+    -
       port: 443
       targetPort: 80
   selector:
