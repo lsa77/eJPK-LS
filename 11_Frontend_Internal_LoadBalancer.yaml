@@ -2,9 +2,11 @@ kind: Service
 apiVersion: v1
 metadata:
   name: ejpk-internal-load-balancer-frontend
+  annotation: service.beta.kubernetes.io/azure-load-balancer-internal: "true"
 spec:
   ports:
     - protocol: TCP
+      port: 80
       targetPort: 5000
   selector:
     app: ejpk-licence-signatures
