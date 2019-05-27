@@ -1,0 +1,13 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: eJPK-LS
+spec:
+  ports:
+    -
+      port: 443
+      targetPort: 80
+  selector:
+    app: eJPK-LS
+    tier: frontend
+  type: LoadBalancer
