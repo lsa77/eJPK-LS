@@ -9,7 +9,7 @@ payload = '<?xml version="1.0" encoding="utf-8"?><asx:abap version="1.0" xmlns:a
 @app.route('/b64encode')
 def hello_world():
 
-    url = '"ejpk-backend-signer-service.default.svc.cluster.local:80/b64encode"'
+    url = 'ejpk-backend-signer-service.default.svc.cluster.local:80/b64encode'
     headers = {'content-type': 'text/xml'}
 
 
