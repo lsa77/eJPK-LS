@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ejpk-request-signer
+spec:
+  selector:
+    matchLabels:
+      app: ejpk-licence-signatures
+      name: ejpk-signer
+  replicas: 3
+  template:
+    metadata:
+      labels:
+        app: ejpk-licence-signatures
+        tier: backend
+        name: ejpk-signer
+    spec:
+      containers:
+        - name: router
+          image: lsa77/ejpk-signer
+          ports:
+            - containerPort: 80
