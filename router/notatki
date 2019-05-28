@@ -18,3 +18,8 @@ url for routing
 ejpk-backend-signer-service.default.svc.cluster.local
 
 
+call signer wget
+wget --header="Content-Type: text/xml" --post-data="1234567890" localhost:8000/b64encode
+
+run alpine docker in k8s
+kubectl run -it --rm --image=alpine bash

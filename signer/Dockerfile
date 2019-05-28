@@ -7,4 +7,4 @@ COPY . /app
 
 EXPOSE 8000
 
-ENTRYPOINT [ "bash", "./rocket1" ]
+ENTRYPOINT ["./rocket1" ]

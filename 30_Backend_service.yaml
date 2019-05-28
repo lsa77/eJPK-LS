@@ -11,5 +11,5 @@ spec:
 
   type: ClusterIP
   selector:
-    app: ejpk-licence-signers
+    app: ejpk-licence-signatures
     tier: backend
