@@ -22,4 +22,4 @@ call signer wget
 wget --header="Content-Type: text/xml" --post-data="1234567890" localhost:8000/b64encode
 
 run alpine docker in k8s
-kubectl run -it --rm --image=alpine bash
+kubectl run -it --rm --restart=Never alpine --image=alpine sh

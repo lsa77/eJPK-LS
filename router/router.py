@@ -10,14 +10,13 @@ payload = '<?xml version="1.0" encoding="utf-8"?><asx:abap version="1.0" xmlns:a
 def hello_world():
 
     url = 'ejpk-backend-signer-service.default.svc.cluster.local:80/b64encode'
-    headers = {'content-type': 'text/xml'}
+    headers = {'Content-Type': 'text/xml'}
 
+    response = requests.post(url=url, headers=headers, data=payload )
 
-    response = requests.post(url=url, headers=headers, data=payload   )
+    print(response.text)
 
-    print(response)
-
-    return response.content
+    return response.text
 
 
 if __name__ == '__main__':
