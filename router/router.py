@@ -33,6 +33,11 @@ class NegotiationMiddleware(object):
         resp.content_type = req.accept
 
 
+class HealthCheck:
+    def on_get(self, req, resp):
+        return "OK"
+
+
 class RouterPost:
     def __init__(self):
         self.root_element: xml.etree.ElementTree = xml.etree.ElementTree.Element('DUMMY')
@@ -106,14 +111,17 @@ class RouterPost:
             data.insert(1, license_element)
 
 
+api = falcon.API(media_type=falcon.MEDIA_XML, middleware=NegotiationMiddleware())
+
+api.add_route('/sign', RouterPost())
+api.add_route('/health-check', HealthCheck())
+
+api.req_options.media_handlers.update(extra_handlers)
+api.resp_options.media_handlers.update(extra_handlers)
+
+
 if __name__ == '__main__':
-
-    api = falcon.API(media_type=falcon.MEDIA_XML, middleware=NegotiationMiddleware())
-
-    api.add_route('/sign', RouterPost())
-
-    api.req_options.media_handlers.update(extra_handlers)
-    api.resp_options.media_handlers.update(extra_handlers)
-
     httpd = simple_server.make_server('0.0.0.0', 5000, api)
     httpd.serve_forever()
+
+    print(httpd)

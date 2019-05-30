@@ -23,7 +23,7 @@ wget --header="Content-Type: text/xml" --post-data="1234567890" localhost:8000/b
 
 run alpine docker in k8s
 kubectl run -it --rm --restart=Never alpine --image=alpine sh
-kubectl run -it --restart=Never ubuntu --image=ubuntu bash
+kubectl run -it ubuntu --image=ubuntu bash
 
 wget -d --header="content-type: application/xml" --post-file="license.xml" http://ejpk-backend-signer-service.default.svc.cluster.local//signature-pkcs7
 wget --header="content-type: text/xml" --post-data=license.xml ejpk-internal-load-balancer-frontend.default.svc.cluster.local:80/sign
@@ -36,4 +36,4 @@ wget --header="content-type: text/xml" --post-data="1234567890" https://ejpk-ls.
 
 
 wget -d --header="content-type: application/xml" --post-file=license.xml 0.0.0.0:5000/sign
-wget -d --header="content-type: application/xml" --post-file=license.xml https://ejpk-ls.westeurope.cloudapp.azure.com:443/sign
+wget -d --header="content-type: application/xml" --post-file=license.xml https://ejpk-ls.westeurope.cloudapp.azure.com:443/sign --no-check-certificate
