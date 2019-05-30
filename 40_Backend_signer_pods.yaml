@@ -16,7 +16,7 @@ spec:
         name: ejpk-signer
     spec:
       containers:
-        - name: router
+        - name: signer
           image: lsa77/ejpk-signer
           ports:
           - containerPort: 8000
