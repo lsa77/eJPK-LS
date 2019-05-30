@@ -23,8 +23,12 @@ wget --header="Content-Type: text/xml" --post-data="1234567890" localhost:8000/b
 
 run alpine docker in k8s
 kubectl run -it --rm --restart=Never alpine --image=alpine sh
+
 wget --header="content-type: text/xml" --post-data="1234567890" ejpk-backend-signer-service.default.svc.cluster.local:80/b64encode
+wget --header="content-type: text/xml" --post-data="1234567890" ejpk-internal-load-balancer-frontend.default.svc.cluster.local:80/b64encode
+
 
 
 zewn url:
-wget --header="content-type: text/xml" --post-data="1234567890"  https://ejpk-ls.westeurope.cloudapp.azure.com:443 --no-check-certificate
+wget --header="content-type: text/xml" --post-data="1234567890" https://ejpk-ls.westeurope.cloudapp.azure.com:443 --no-check-certificate
+wget --header="content-type: text/xml" --post-data="1234567890" https://ejpk-ls.westeurope.cloudapp.azure.com:443/b64encode  --no-check-certificate
