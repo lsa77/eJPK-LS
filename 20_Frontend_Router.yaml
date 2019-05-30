@@ -19,7 +19,7 @@ spec:
         - name: router
           image: lsa77/ejpk-router
           ports:
-            - containerPort: 80
+          - containerPort: 80
         env:
           - name: SIGNER_URL
             vaue: http://ejpk-internal-load-balancer-frontend.default.svc.cluster.local:80
