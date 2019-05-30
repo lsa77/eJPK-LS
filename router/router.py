@@ -35,7 +35,8 @@ class NegotiationMiddleware(object):
 
 class HealthCheck:
     def on_get(self, req, resp):
-        return "OK"
+        resp.status = falcon.HTTP_200
+        resp.body = "OK"
 
 
 class RouterPost:
