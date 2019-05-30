@@ -22,4 +22,4 @@ spec:
           - containerPort: 80
         env:
           - name: SIGNER_URL
-            vaue: http://ejpk-internal-load-balancer-frontend.default.svc.cluster.local:80
+            value: http://ejpk-internal-load-balancer-frontend.default.svc.cluster.local:80

@@ -27,6 +27,6 @@ spec:
                   name: kbj-secret
                   key: kbj-pkey-pass-phrase
             - name: CERTIFICATE
-              vaue: jpklic.crt
+              value: jpklic.crt
             - name: PRIVATE_KEY
-              vaue: jpklic.pem
+              value: jpklic.pem
