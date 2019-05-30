@@ -22,4 +22,4 @@ spec:
           - containerPort: 5000
           env:
             - name: SIGNER_URL
-              value: ejpk-backend-signer-service.default.svc.cluster.local:80
+              value: http://ejpk-backend-signer-service.default.svc.cluster.local:80
