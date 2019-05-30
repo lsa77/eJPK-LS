@@ -32,3 +32,7 @@ wget --header="content-type: text/xml" --post-data="1234567890" ejpk-internal-lo
 zewn url:
 wget --header="content-type: text/xml" --post-data="1234567890" https://ejpk-ls.westeurope.cloudapp.azure.com:443 --no-check-certificate
 wget --header="content-type: text/xml" --post-data="1234567890" https://ejpk-ls.westeurope.cloudapp.azure.com:443/b64encode  --no-check-certificate
+
+
+wget -d --header="content-type: application/xml" --post-file=license.xml 0.0.0.0:8000/hello
+
