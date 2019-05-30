@@ -20,3 +20,13 @@ spec:
           image: lsa77/ejpk-signer
           ports:
             - containerPort: 80
+          env:
+            - name: PRIVATE_KEY_PASSCODE
+              valueFrom:
+                secretKeyRef:
+                  name: kbj-secret
+                  key: kbj-pkey-pass-phrase
+            - name: CERTIFICATE
+              vaue: jpklic.crt
+            - name: PRIVATE_KEY
+              vaue: jpklic.pem
